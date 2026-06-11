@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Available Pets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 30px;
+        }
+
+        a.rescue-btn {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        a.rescue-btn:hover {
+            background-color: #2980b9;
+        }
+
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            display: inline-block;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        form select, form input[type="text"] {
+            padding: 8px;
+            margin: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            border: none;
+            color: white;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Available Pets for Adoption</h1>
+<a class="rescue-btn" href="rescue.html">Add a Rescue Pet</a><br>
+
+<form action="PetListServlet" method="get">
+    <label for="species">Species:</label>
+    <select id="species" name="species">
+        <option value="">All</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+    </select>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" placeholder="Enter location">
+
+    <input type="submit" value="Search">
+</form>
+
+</body>
+</html>

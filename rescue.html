@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>🐾 Rescue a Pet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #2e8b57;
+            margin-top: 30px;
+        }
+
+        form {
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            background-color: #e6f2ff;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #246b45;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2e8b57;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🐾 Rescue a Pet 🐾</h1>
+
+<form action="RescueServlet" method="post">
+    <!-- name displayed from session -->
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Your name" required>
+
+    <label>Pet Type:</label>
+    <input type="text" name="petType" placeholder="e.g., Dog, Cat" required>
+
+    <label>Pet Condition:</label>
+    <input type="text" name="petCondition" placeholder="e.g., Sick, Injured" required>
+
+    <label>Location:</label>
+    <input type="text" name="location" placeholder="Enter your city/area" required>
+
+    <label>Mobile No:</label>
+    <input type="text" name="mobile" placeholder="Enter your contact number" required>
+
+    <input type="submit" value="Submit Rescue Request">
+</form>
+
+<br>
+<a href="index.html"><-Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adoption Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #00aaff;
+            border-radius: 10px;
+        }
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        h1 { color: #00aaff; }
+        a { color: #0066cc; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<h1>Adoption Form</h1>
+<hr style="width:50%; border:2px solid #00aaff;">
+
+<form action="AdoptionServlet" method="post">
+    Name:<br>
+    <input type="text" name="name" required><br>
+    
+    House Type:<br>
+    <input type="text" name="houseType" required><br>
+    
+    Experience:<br>
+    <input type="text" name="experience" required><br>
+    
+    Availability:<br>
+    <input type="text" name="availability" required><br>
+    
+    <!-- Hidden fields for petId and petName from Pet List -->
+    <input type="hidden" name="petId" id="petId">
+    <input type="hidden" name="petName" id="petName">
+    
+    <input type="submit" value="Submit Adoption Request">
+</form>
+
+<br>
+<a href="PetListServlet"><- Back to Pet List</a>
+
+<script>
+    // Get petId and petName from URL query parameters
+    const params = new URLSearchParams(window.location.search);
+    const petId = params.get('petId');
+    const petName = params.get('petName');
+
+    if (petId && petName) {
+        document.getElementById('petId').value = petId;
+        document.getElementById('petName').value = petName;
+    } else {
+        alert("No pet selected! Please select a pet from the list.");
+        window.location.href = "PetListServlet";
+    }
+</script>
+
+</body>
+</html>
